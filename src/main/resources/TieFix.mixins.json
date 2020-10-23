@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "ca.jtai.tiefix.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+  ],
+  "client": [
+    "FixMC197616Mixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
