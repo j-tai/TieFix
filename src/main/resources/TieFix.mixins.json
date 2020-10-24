@@ -6,6 +6,7 @@
   "mixins": [
   ],
   "client": [
+    "FixMC127970Mixin",
     "FixMC197616Mixin"
   ],
   "injectors": {
