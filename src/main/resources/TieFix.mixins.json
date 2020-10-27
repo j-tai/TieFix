@@ -6,6 +6,7 @@
   "mixins": [
   ],
   "client": [
+    "mc122477.RenderSystemMixin",
     "mc122477.TextFieldWidgetMixin",
     "mc127970.HeldItemRendererMixin",
     "mc197616.BiomeArrayMixin"
