@@ -1,4 +1,4 @@
-package ca.jtai.tiefix.mixin;
+package ca.jtai.tiefix.mixin.mc127970;
 
 import ca.jtai.tiefix.TieFixClient;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
@@ -7,12 +7,8 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-/**
- * MC-127970: Using riptide on a trident with an item in your off-hand causes visual glitch with the item in your
- * offhand
- */
 @Mixin(HeldItemRenderer.class)
-public class FixMC127970Mixin {
+public class HeldItemRendererMixin {
     @Redirect(
             method = "renderFirstPersonItem",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/AbstractClientPlayerEntity;isUsingRiptide()Z")

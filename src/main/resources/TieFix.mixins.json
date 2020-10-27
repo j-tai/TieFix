@@ -6,9 +6,9 @@
   "mixins": [
   ],
   "client": [
-    "FixMC122477Mixin",
-    "FixMC127970Mixin",
-    "FixMC197616Mixin"
+    "mc122477.TextFieldWidgetMixin",
+    "mc127970.HeldItemRendererMixin",
+    "mc197616.BiomeArrayMixin"
   ],
   "injectors": {
     "defaultRequire": 1
