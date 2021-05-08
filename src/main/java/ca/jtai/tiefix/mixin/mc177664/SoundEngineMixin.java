@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 @Mixin(targets = "net.minecraft.client.sound.SoundEngine$SourceSetImpl")
 public class SoundEngineMixin {
     @Redirect(
-        method = "createSource",
+        method = "createSource()Lnet/minecraft/client/sound/Source;",
         at = @At(value = "INVOKE", target = "Lorg/apache/logging/log4j/Logger;warn(Ljava/lang/String;Ljava/lang/Object;)V")
     )
     private void warnProxy(Logger logger, String message, Object p0) {
