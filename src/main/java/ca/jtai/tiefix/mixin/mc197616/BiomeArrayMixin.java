@@ -10,8 +10,8 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 @Mixin(BiomeArray.class)
 public class BiomeArrayMixin {
     @Redirect(
-            method = "<init>(Lnet/minecraft/util/collection/IndexedIterable;[I)V",
-            at = @At(value = "INVOKE", target = "Lorg/apache/logging/log4j/Logger;warn(Ljava/lang/String;)V")
+        method = "<init>(Lnet/minecraft/util/collection/IndexedIterable;[I)V",
+        at = @At(value = "INVOKE", target = "Lorg/apache/logging/log4j/Logger;warn(Ljava/lang/String;)V")
     )
     private void warnProxy(Logger obj, String value) {
         // Warn only if the fix is not enabled

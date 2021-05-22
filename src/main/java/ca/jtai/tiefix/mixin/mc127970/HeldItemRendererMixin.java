@@ -10,8 +10,8 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 @Mixin(HeldItemRenderer.class)
 public class HeldItemRendererMixin {
     @Redirect(
-            method = "renderFirstPersonItem",
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/AbstractClientPlayerEntity;isUsingRiptide()Z")
+        method = "renderFirstPersonItem",
+        at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/AbstractClientPlayerEntity;isUsingRiptide()Z")
     )
     private boolean isUsingRiptideProxy(AbstractClientPlayerEntity obj) {
         if (!TieFixClient.getConfig().mc127970_fix)
