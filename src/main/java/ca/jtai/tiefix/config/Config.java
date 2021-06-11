@@ -6,5 +6,4 @@ public class Config {
     public boolean mc127970_fix = true;
     public boolean mc145929_fix = true;
     public boolean mc177664_fix = true;
-    public boolean mc197616_fix = true;
 }
