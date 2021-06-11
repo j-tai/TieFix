@@ -12,8 +12,6 @@ A Fabric mod that fixes some annoying bugs in the Minecraft client.
   * Fix: Add a shadow to the text
 * [**MC-177664**](https://bugs.mojang.com/browse/MC-177664) Sound system warning messages are spamming to the system log
   * Workaround: Do not log these warnings
-* [**MC-197616**](https://bugs.mojang.com/browse/MC-197616) Certain custom biome settings cause game to spam "Received invalid biome id: -1" in the console, causing major lag or freeze
-  * Workaround: Do not log these warnings
 
 ## Configuration
 
@@ -28,7 +26,6 @@ The `*_fix` options can be changed from `true` to `false` to disable fixes. You 
 * `mc127970_fix`: whether to enable the fix for MC-127970.
 * `mc145929_fix`: whether to enable the fix for MC-145929.
 * `mc177664_fix`: whether to enable the fix for MC-177664.
-* `mc197616_fix`: whether to enable the fix for MC-197616.
 
 ## License
 
