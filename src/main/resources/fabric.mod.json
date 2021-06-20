@@ -3,12 +3,17 @@
   "id": "tiefix",
   "version": "${version}",
   "name": "TieFix",
-  "description": "",
-  "authors": [],
-  "contact": {},
-  "license": "GPL-3.0",
-  "icon": "assets/TieFix/icon.png",
-  "environment": "*",
+  "description": "Fixes some annoying bugs",
+  "authors": [
+    "James Tai"
+  ],
+  "contact": {
+    "homepage": "https://github.com/j-tai/TieFix",
+    "issues": "https://github.com/j-tai/TieFix/issues",
+    "sources": "https://github.com/j-tai/TieFix"
+  },
+  "license": "GPL-3.0-or-later",
+  "environment": "client",
   "entrypoints": {
     "client": [
       "ca.jtai.tiefix.TieFixClient"
