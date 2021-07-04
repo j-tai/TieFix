@@ -10,6 +10,8 @@ A Fabric mod that fixes some annoying bugs in the Minecraft client.
   * Workaround: Render held items in regular place while using riptide
 * [**MC-145929**](https://bugs.mojang.com/browse/MC-145929) Actionbar text may be difficult to read without text background enabled
   * Fix: Add a shadow to the text
+* [**MC-151412**](https://bugs.mojang.com/browse/MC-151412) "Edit Server Info" window does not focus "Server Name" text field automatically
+  * Fix: Make the "Server Name" text field focused
 * [**MC-177664**](https://bugs.mojang.com/browse/MC-177664) Sound system warning messages are spamming to the system log
   * Workaround: Do not log these warnings
 
@@ -25,6 +27,7 @@ The `*_fix` options can be changed from `true` to `false` to disable fixes. You 
 * `mc122477_keys`: which keys to ignore. When a character is typed on the first poll after opening the chat, it will be ignored only if it is found in this string. If this string is empty, then all characters will be ignored. You are recommended to leave this empty.
 * `mc127970_fix`: whether to enable the fix for MC-127970.
 * `mc145929_fix`: whether to enable the fix for MC-145929.
+* `mc151412_fix`: whether to enable the fix for MC-151412.
 * `mc177664_fix`: whether to enable the fix for MC-177664.
 
 ## License
