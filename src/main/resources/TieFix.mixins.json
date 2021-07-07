@@ -10,6 +10,7 @@
     "mc122477.TextFieldWidgetMixin",
     "mc127970.HeldItemRendererMixin",
     "mc140646.TextFieldWidgetMixin",
+    "mc147766.TextFieldWidgetMixin",
     "mc145929.InGameHudMixin",
     "mc151412.AddServerScreenMixin",
     "mc177664.SoundEngineMixin",
