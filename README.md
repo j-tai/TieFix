@@ -12,6 +12,8 @@ A Fabric mod that fixes some annoying bugs in the Minecraft client.
   * Fix: Scroll the text properly
 * [**MC-145929**](https://bugs.mojang.com/browse/MC-145929) Actionbar text may be difficult to read without text background enabled
   * Fix: Add a shadow to the text
+* [**MC-147766**](https://bugs.mojang.com/browse/MC-147766) Shift key stays pressed until press any other key
+  * Fix: Handle mouse clicks properly
 * [**MC-151412**](https://bugs.mojang.com/browse/MC-151412) "Edit Server Info" window does not focus "Server Name" text field automatically
   * Fix: Make the "Server Name" text field focused
 * [**MC-177664**](https://bugs.mojang.com/browse/MC-177664) Sound system warning messages are spamming to the system log
