@@ -16,6 +16,8 @@ A Fabric mod that fixes some annoying bugs in the Minecraft client.
   * Fix: Handle mouse clicks properly
 * [**MC-151412**](https://bugs.mojang.com/browse/MC-151412) "Edit Server Info" window does not focus "Server Name" text field automatically
   * Fix: Make the "Server Name" text field focused
+* [**MC-237493**](https://bugs.mojang.com/browse/MC-237493) Telemetry cannot be disabled
+  * Fix: Disable telemetry by default (can be re-enabled in the configuration)
 
 ## Configuration
 
@@ -31,6 +33,7 @@ The `*_fix` options can be changed from `true` to `false` to disable fixes. You 
 * `mc140646_fix`: whether to enable the fix for MC-140646.
 * `mc145929_fix`: whether to enable the fix for MC-145929.
 * `mc151412_fix`: whether to enable the fix for MC-151412.
+* `mc237493_fix`: whether to enable the fix for MC-237493. Set this to `false` to enable telemetry.
 
 ## License
 
