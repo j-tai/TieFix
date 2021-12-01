@@ -12,7 +12,8 @@
     "mc140646.TextFieldWidgetMixin",
     "mc147766.TextFieldWidgetMixin",
     "mc145929.InGameHudMixin",
-    "mc151412.AddServerScreenMixin"
+    "mc151412.AddServerScreenMixin",
+    "mc237493.TelemetrySenderMixin"
   ],
   "injectors": {
     "defaultRequire": 1
