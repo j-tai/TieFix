@@ -37,4 +37,4 @@ The `*_fix` options can be changed from `true` to `false` to disable fixes. You 
 
 ## License
 
-[GPLv3.](LICENSE)
+[LGPLv3.](LICENSE)
