@@ -2,6 +2,8 @@
 
 A Fabric mod that fixes some annoying bugs in the Minecraft client.
 
+[**Download on Modrinth**](https://modrinth.com/mod/tiefix)
+
 ## Bugs fixed
 
 * [**MC-122477**](https://bugs.mojang.com/browse/MC-122477) Linux/GNU: Opening chat sometimes writes 't'
