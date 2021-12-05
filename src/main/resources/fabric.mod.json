@@ -13,6 +13,7 @@
     "sources": "https://github.com/j-tai/TieFix"
   },
   "license": "LGPL-3.0-only",
+  "icon": "assets/tiefix/icon.png",
   "environment": "client",
   "entrypoints": {
     "client": [
