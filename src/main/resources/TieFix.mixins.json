@@ -6,12 +6,13 @@
   "mixins": [
   ],
   "client": [
+    "mc2071.ClientPlayerEntityMixin",
     "mc122477.RenderSystemMixin",
     "mc122477.TextFieldWidgetMixin",
     "mc127970.HeldItemRendererMixin",
     "mc140646.TextFieldWidgetMixin",
-    "mc147766.TextFieldWidgetMixin",
     "mc145929.InGameHudMixin",
+    "mc147766.TextFieldWidgetMixin",
     "mc151412.AddServerScreenMixin",
     "mc237493.TelemetrySenderMixin"
   ],
