@@ -1,6 +1,6 @@
 package ca.jtai.tiefix.mixin.mc147766;
 
-import ca.jtai.tiefix.TieFixClient;
+import ca.jtai.tiefix.TieFix;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import org.spongepowered.asm.mixin.Mixin;
@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(TextFieldWidget.class)
+@Mixin(value = TextFieldWidget.class, priority = TieFix.MIXIN_PRIORITY)
 public class TextFieldWidgetMixin {
     @Shadow
     private boolean selecting;
@@ -19,7 +19,7 @@ public class TextFieldWidgetMixin {
         target = "Lnet/minecraft/client/gui/widget/TextFieldWidget;setCursor(I)V"
     ))
     private void onKeyPressed(double mouseX, double mouseY, int button, CallbackInfoReturnable<Boolean> cir) {
-        if (TieFixClient.getConfig().mc147766_fix) {
+        if (TieFix.getConfig().mc147766_fix) {
             this.selecting = Screen.hasShiftDown();
         }
     }

@@ -17,7 +17,7 @@
   "environment": "client",
   "entrypoints": {
     "client": [
-      "ca.jtai.tiefix.TieFixClient"
+      "ca.jtai.tiefix.TieFix"
     ]
   },
   "mixins": [

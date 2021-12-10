@@ -1,6 +1,6 @@
 package ca.jtai.tiefix.mixin.mc122477;
 
-import ca.jtai.tiefix.TieFixClient;
+import ca.jtai.tiefix.TieFix;
 import ca.jtai.tiefix.config.Config;
 import ca.jtai.tiefix.fixes.mc122477.PollCounter;
 import net.minecraft.client.font.TextRenderer;
@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(TextFieldWidget.class)
+@Mixin(value = TextFieldWidget.class, priority = TieFix.MIXIN_PRIORITY)
 public class TextFieldWidgetMixin {
     private long tiefix_initialPoll = -1;
 
@@ -23,7 +23,7 @@ public class TextFieldWidgetMixin {
 
     @Inject(method = "charTyped", at = @At("HEAD"), cancellable = true)
     private void onCharTyped(char chr, int keyCode, CallbackInfoReturnable<Boolean> cir) {
-        Config config = TieFixClient.getConfig();
+        Config config = TieFix.getConfig();
         if (!config.mc122477_fix)
             return;
         // Deny typing blacklisted characters on the very first poll after initialization

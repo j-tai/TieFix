@@ -17,6 +17,6 @@
     "mc237493.TelemetrySenderMixin"
   ],
   "injectors": {
-    "defaultRequire": 1
+    "defaultRequire": 0
   }
 }
