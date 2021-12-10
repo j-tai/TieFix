@@ -1,6 +1,6 @@
 package ca.jtai.tiefix.mixin.mc237493;
 
-import ca.jtai.tiefix.TieFixClient;
+import ca.jtai.tiefix.TieFix;
 import com.mojang.authlib.minecraft.TelemetrySession;
 import com.mojang.authlib.minecraft.UserApiService;
 import net.minecraft.client.MinecraftClient;
@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import java.util.Optional;
 import java.util.UUID;
 
-@Mixin(TelemetrySender.class)
+@Mixin(value = TelemetrySender.class, priority = TieFix.MIXIN_PRIORITY)
 public class TelemetrySenderMixin {
     @Shadow
     @Final
@@ -35,7 +35,7 @@ public class TelemetrySenderMixin {
         UUID deviceSessionId,
         CallbackInfo ci
     ) {
-        if (TieFixClient.getConfig().mc237493_fix) {
+        if (TieFix.getConfig().mc237493_fix) {
             session = TelemetrySession.DISABLED;
             sent = true;
         }

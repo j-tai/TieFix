@@ -16,11 +16,13 @@ import java.io.IOException;
 import java.nio.file.Path;
 
 @Environment(EnvType.CLIENT)
-public class TieFixClient implements ClientModInitializer {
+public class TieFix implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         loadConfig();
     }
+
+    public static final int MIXIN_PRIORITY = 2000;
 
     // Configuration
 
