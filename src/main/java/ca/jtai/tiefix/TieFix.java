@@ -22,7 +22,7 @@ public class TieFix implements ClientModInitializer {
         loadConfig();
     }
 
-    public static final int MIXIN_PRIORITY = 2000;
+    public static final int MIXIN_PRIORITY = 500;
 
     // Configuration
 
