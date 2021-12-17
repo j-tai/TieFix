@@ -1,5 +1,6 @@
 package ca.jtai.tiefix.mixin.mc237493;
 
+import ca.jtai.tiefix.Fix;
 import ca.jtai.tiefix.TieFix;
 import com.mojang.authlib.minecraft.TelemetrySession;
 import com.mojang.authlib.minecraft.UserApiService;
@@ -35,7 +36,7 @@ public class TelemetrySenderMixin {
         UUID deviceSessionId,
         CallbackInfo ci
     ) {
-        if (TieFix.getConfig().mc237493_fix) {
+        if (TieFix.getConfig().isEnabled(Fix.MC237493)) {
             session = TelemetrySession.DISABLED;
             sent = true;
         }

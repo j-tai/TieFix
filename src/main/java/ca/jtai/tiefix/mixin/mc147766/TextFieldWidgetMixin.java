@@ -1,5 +1,6 @@
 package ca.jtai.tiefix.mixin.mc147766;
 
+import ca.jtai.tiefix.Fix;
 import ca.jtai.tiefix.TieFix;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.TextFieldWidget;
@@ -19,7 +20,7 @@ public class TextFieldWidgetMixin {
         target = "Lnet/minecraft/client/gui/widget/TextFieldWidget;setCursor(I)V"
     ))
     private void onKeyPressed(double mouseX, double mouseY, int button, CallbackInfoReturnable<Boolean> cir) {
-        if (TieFix.getConfig().mc147766_fix) {
+        if (TieFix.getConfig().isEnabled(Fix.MC147766)) {
             this.selecting = Screen.hasShiftDown();
         }
     }

@@ -1,7 +1,7 @@
 package ca.jtai.tiefix.mixin.mc122477;
 
+import ca.jtai.tiefix.Fix;
 import ca.jtai.tiefix.TieFix;
-import ca.jtai.tiefix.config.Config;
 import ca.jtai.tiefix.fixes.mc122477.PollCounter;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.widget.TextFieldWidget;
@@ -23,12 +23,15 @@ public class TextFieldWidgetMixin {
 
     @Inject(method = "charTyped", at = @At("HEAD"), cancellable = true)
     private void onCharTyped(char chr, int keyCode, CallbackInfoReturnable<Boolean> cir) {
-        Config config = TieFix.getConfig();
-        if (!config.mc122477_fix)
+        var config = TieFix.getConfig();
+        if (!config.isEnabled(Fix.MC122477)) {
             return;
+        }
+
         // Deny typing blacklisted characters on the very first poll after initialization
         if (tiefix_initialPoll + 1 == PollCounter.get()) {
-            if (config.mc122477_keys == null || config.mc122477_keys.isEmpty() || config.mc122477_keys.contains(Character.toString(chr))) {
+            var keys = config.mc122477_keys;
+            if (keys.isEmpty() || keys.toLowerCase().indexOf(Character.toLowerCase(chr)) != -1) {
                 // Return from the function early; ignore the key press
                 cir.setReturnValue(true);
             }
