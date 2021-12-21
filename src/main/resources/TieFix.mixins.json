@@ -7,6 +7,8 @@
   ],
   "client": [
     "mc2071.ClientPlayerEntityMixin",
+    "mc89242.KeyboardMixin",
+    "mc89242.SignEditScreenMixin",
     "mc122477.RenderSystemMixin",
     "mc122477.TextFieldWidgetMixin",
     "mc127970.HeldItemRendererMixin",
