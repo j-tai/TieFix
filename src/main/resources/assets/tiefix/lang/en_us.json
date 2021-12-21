@@ -3,6 +3,8 @@
 
     "options.tiefix.mc2071": "Allow opening GUIs in a nether portal",
     "options.tiefix.mc2071.bug": "MC-2071",
+    "options.tiefix.mc89242": "Fix line limit when writing sign",
+    "options.tiefix.mc89242.bug": "MC-89242",
     "options.tiefix.mc122477": "Fix 't' when opening chat (Linux only)",
     "options.tiefix.mc122477.bug": "MC-122477",
     "options.tiefix.mc122477_keys": "Keys to ignore",
@@ -18,7 +20,7 @@
     "options.tiefix.mc151412": "Fix 'Add Server' not focusing box",
     "options.tiefix.mc151412.bug": "MC-151412",
     "options.tiefix.mc233042": "Fix 'Direct Connect' not focusing box",
-    "options.tiefix.mc233042.bug": "MC-237493",
+    "options.tiefix.mc233042.bug": "MC-233042",
     "options.tiefix.mc237493": "Disable telemetry",
     "options.tiefix.mc237493.bug": "MC-237493"
 }

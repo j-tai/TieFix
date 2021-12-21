@@ -8,6 +8,8 @@ A Fabric mod that fixes some annoying bugs in the Minecraft client.
 
 * [**MC-2071**](https://bugs.mojang.com/browse/MC-2071) Pausing the Game or opening any GUI in a nether portal does not work
   * Fix: Allow opening GUIs in a nether portal
+* [**MC-89242**](https://bugs.mojang.com/browse/MC-89242) Length of writing text on sign limited by Resource Pack
+  * Fix: Limit the text based on the default font
 * [**MC-122477**](https://bugs.mojang.com/browse/MC-122477) Linux/GNU: Opening chat sometimes writes 't'
   * Workaround: Ignore a character entered on the first input poll after opening chat
 * [**MC-127970**](https://bugs.mojang.com/browse/MC-127970) Using riptide on a trident with an item in your off-hand causes visual glitch with the item in your offhand
