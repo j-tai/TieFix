@@ -14,4 +14,9 @@ public class Config {
     public boolean mc145929_fix = true;
     public boolean mc151412_fix = true;
     public boolean mc237493_fix = true;
+
+    /**
+     * The default configuration. Do not mutate this object.
+     */
+    public static final Config DEFAULT = new Config();
 }
