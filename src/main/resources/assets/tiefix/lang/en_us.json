@@ -15,8 +15,10 @@
     "options.tiefix.mc145929.bug": "MC-145929",
     "options.tiefix.mc147766": "Fix stuck Shift key in text boxes",
     "options.tiefix.mc147766.bug": "MC-147766",
-    "options.tiefix.mc151412": "Fix 'Server Name' field not focused",
+    "options.tiefix.mc151412": "Fix 'Add Server' not focusing box",
     "options.tiefix.mc151412.bug": "MC-151412",
+    "options.tiefix.mc233042": "Fix 'Direct Connect' not focusing box",
+    "options.tiefix.mc233042.bug": "MC-237493",
     "options.tiefix.mc237493": "Disable telemetry",
     "options.tiefix.mc237493.bug": "MC-237493"
 }
