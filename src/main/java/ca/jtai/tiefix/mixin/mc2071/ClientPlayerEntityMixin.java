@@ -1,6 +1,5 @@
 package ca.jtai.tiefix.mixin.mc2071;
 
-import ca.jtai.tiefix.Fix;
 import ca.jtai.tiefix.TieFix;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
@@ -17,7 +16,7 @@ public class ClientPlayerEntityMixin {
         ordinal = 0
     ))
     private Screen onUpdateNausea(MinecraftClient instance) {
-        if (TieFix.getConfig().isEnabled(Fix.MC2071)) {
+        if (TieFix.getConfig().mc2071_fix) {
             return null; // Pretend that there's no screen open
         } else {
             return instance.currentScreen;

@@ -1,6 +1,5 @@
 package ca.jtai.tiefix.mixin.mc122477;
 
-import ca.jtai.tiefix.Fix;
 import ca.jtai.tiefix.TieFix;
 import ca.jtai.tiefix.fixes.mc122477.PollCounter;
 import net.minecraft.client.font.TextRenderer;
@@ -24,7 +23,7 @@ public class TextFieldWidgetMixin {
     @Inject(method = "charTyped", at = @At("HEAD"), cancellable = true)
     private void onCharTyped(char chr, int keyCode, CallbackInfoReturnable<Boolean> cir) {
         var config = TieFix.getConfig();
-        if (!config.isEnabled(Fix.MC122477)) {
+        if (!config.mc122477_fix) {
             return;
         }
 

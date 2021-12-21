@@ -1,6 +1,5 @@
 package ca.jtai.tiefix.mixin.mc151412;
 
-import ca.jtai.tiefix.Fix;
 import ca.jtai.tiefix.TieFix;
 import net.minecraft.client.gui.screen.AddServerScreen;
 import net.minecraft.client.gui.screen.Screen;
@@ -25,7 +24,7 @@ public class AddServerScreenMixin extends Screen {
 
     @Inject(method = "init", at = @At("RETURN"))
     private void onInit(CallbackInfo ci) {
-        if (TieFix.getConfig().isEnabled(Fix.MC151412)) {
+        if (TieFix.getConfig().mc151412_fix) {
             setInitialFocus(serverNameField);
         }
     }
@@ -35,7 +34,7 @@ public class AddServerScreenMixin extends Screen {
         target = "Lnet/minecraft/client/gui/widget/TextFieldWidget;setTextFieldFocused(Z)V"
     ))
     private void setTextFieldFocusedProxy(TextFieldWidget textFieldWidget, boolean focused) {
-        if (!TieFix.getConfig().isEnabled(Fix.MC151412)) {
+        if (!TieFix.getConfig().mc151412_fix) {
             textFieldWidget.setTextFieldFocused(focused);
         }
     }

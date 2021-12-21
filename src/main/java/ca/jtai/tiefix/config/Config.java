@@ -1,28 +1,17 @@
 package ca.jtai.tiefix.config;
 
-import ca.jtai.tiefix.Fix;
+import net.minecraft.util.Util;
 
-import java.util.HashMap;
+public class Config {
+    private int version = 0;
 
-public class Config implements ConfigVersion {
-    private int version = 1;
-
-    private HashMap<String, Boolean> fixToggles = new HashMap<>();
+    public boolean mc2071_fix = true;
+    public boolean mc122477_fix = Util.getOperatingSystem() == Util.OperatingSystem.LINUX;
     public String mc122477_keys = "";
-
-    public boolean isEnabled(Fix fix) {
-        if (!fix.isNeeded()) {
-            return false;
-        }
-        return fixToggles.getOrDefault(fix.name(), true);
-    }
-
-    public void setEnabled(Fix fix, boolean enabled) {
-        fixToggles.put(fix.name(), enabled);
-    }
-
-    @Override
-    public ConfigVersion upgrade() {
-        throw new UnsupportedOperationException();
-    }
+    public boolean mc127970_fix = true;
+    public boolean mc140646_fix = true;
+    public boolean mc147766_fix = true;
+    public boolean mc145929_fix = true;
+    public boolean mc151412_fix = true;
+    public boolean mc237493_fix = true;
 }

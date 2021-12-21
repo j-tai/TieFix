@@ -1,6 +1,5 @@
 package ca.jtai.tiefix.mixin.mc145929;
 
-import ca.jtai.tiefix.Fix;
 import ca.jtai.tiefix.TieFix;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.hud.InGameHud;
@@ -18,7 +17,7 @@ public class InGameHudMixin {
     )
     private int renderProxy(TextRenderer textRenderer, MatrixStack matrices, Text text, float x, float y, int color) {
         // Change to drawWithShadow if the fix is enabled
-        if (TieFix.getConfig().isEnabled(Fix.MC145929)) {
+        if (TieFix.getConfig().mc145929_fix) {
             return textRenderer.drawWithShadow(matrices, text, x, y, color);
         } else {
             return textRenderer.draw(matrices, text, x, y, color);
