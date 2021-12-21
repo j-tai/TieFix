@@ -27,20 +27,9 @@ A Fabric mod that fixes some annoying bugs in the Minecraft client.
 
 ## Configuration
 
-The configuration file can be found in `.minecraft/config/tiefix.json`. A default configuration file is created when you first open Minecraft with this mod installed.
+All fixes can be toggled on or off in the options menu.
 
-The configuration is in JSON format. Note that comments are not allowed. If the configuration file is invalid, then an error will be logged, and the configuration will be reset.
-
-The `*_fix` options can be changed from `true` to `false` to disable fixes. You are recommended to leave all of them on, except where noted below.
-
-* `mc2071_fix`: whether to enable the fix for MC-2071.
-* `mc122477_fix`: whether to enable the fix for MC-122477. This is enabled by default, but since the bug only occurs on Linux, you may turn this off if you are running Windows or macOS.
-* `mc122477_keys`: which keys to ignore. When a character is typed on the first poll after opening the chat, it will be ignored only if it is found in this string. If this string is empty, then all characters will be ignored. You are recommended to leave this empty.
-* `mc127970_fix`: whether to enable the fix for MC-127970.
-* `mc140646_fix`: whether to enable the fix for MC-140646.
-* `mc145929_fix`: whether to enable the fix for MC-145929.
-* `mc151412_fix`: whether to enable the fix for MC-151412.
-* `mc237493_fix`: whether to enable the fix for MC-237493. Set this to `false` to enable telemetry.
+The options menu can be opened if you have [Mod Menu](https://modrinth.com/mod/modmenu) installed. To access it, go to Mods > TieFix and click the settings button at the top-right.
 
 ## License
 
