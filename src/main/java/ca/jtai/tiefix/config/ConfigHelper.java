@@ -1,6 +1,7 @@
 package ca.jtai.tiefix.config;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import net.fabricmc.loader.api.FabricLoader;
 
 import java.io.FileNotFoundException;
@@ -12,7 +13,7 @@ import java.nio.file.Path;
 
 public class ConfigHelper {
     private static Path configPath = FabricLoader.getInstance().getConfigDir().resolve("tiefix.json");
-    private static Gson gson = new Gson();
+    private static Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
     /**
      * Read the configuration from disk.

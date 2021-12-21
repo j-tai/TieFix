@@ -18,6 +18,9 @@
   "entrypoints": {
     "client": [
       "ca.jtai.tiefix.TieFix"
+    ],
+    "modmenu": [
+      "ca.jtai.tiefix.TieFixModMenu"
     ]
   },
   "mixins": [
@@ -25,5 +28,8 @@
   ],
   "depends": {
     "minecraft": "1.18.x"
+  },
+  "recommends": {
+    "modmenu": ">=3"
   }
 }
