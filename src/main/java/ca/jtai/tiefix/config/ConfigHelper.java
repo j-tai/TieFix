@@ -18,33 +18,17 @@ public class ConfigHelper {
      * Read the configuration from disk.
      */
     public static Config readConfig() {
-        boolean shouldWrite = false;
         try {
             var contents = Files.readString(configPath);
             // Get the version of the config
             var version = gson.fromJson(contents, VersionChecker.class);
             if (version != null) {
                 // Figure out which class to deserialize as
-                var cls = switch (version.version) {
-                    case 0 -> ConfigV0.class;
-                    case 1 -> Config.class;
-                    default -> throw new IllegalArgumentException("Unknown config version " + version.version);
-                };
-                // Deserialize using that class
-                var configVersion = gson.fromJson(contents, cls);
-                // Keep upgrading until we get to the latest version
-                while (true) {
-                    if (configVersion == null) {
-                        break;
-                    } else if (configVersion instanceof Config config) {
-                        if (shouldWrite) {
-                            writeConfig(config);
-                        }
-                        return config;
-                    }
-                    configVersion = configVersion.upgrade();
-                    shouldWrite = true;
+                if (version.version != 0) {
+                    throw new IllegalArgumentException("Unknown config version " + version.version);
                 }
+                // Deserialize using that class
+                return gson.fromJson(contents, Config.class);
             }
         } catch (FileNotFoundException | NoSuchFileException ignored) {
         } catch (Exception e) {
