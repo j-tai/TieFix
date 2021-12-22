@@ -13,7 +13,7 @@ A Fabric mod that fixes some annoying bugs in the Minecraft client.
 * [**MC-122477**](https://bugs.mojang.com/browse/MC-122477) Linux/GNU: Opening chat sometimes writes 't'
   * Workaround: Ignore a character entered on the first input poll after opening chat
 * [**MC-127970**](https://bugs.mojang.com/browse/MC-127970) Using riptide on a trident with an item in your off-hand causes visual glitch with the item in your offhand
-  * Workaround: Render held items in regular place while using riptide
+  * Fix: Render non-trident items in regular place while using riptide
 * [**MC-140646**](https://bugs.mojang.com/browse/MC-140646) Text fields don't scroll while selecting text with Shift
   * Fix: Scroll the text properly
 * [**MC-145929**](https://bugs.mojang.com/browse/MC-145929) Actionbar text may be difficult to read without text background enabled
