@@ -18,11 +18,11 @@ public class Sizemap {
     }
 
     public int getWidth(String text) {
-        var result = 0;
-        for (var ch : text.toCharArray()) {
-            result += getWidth(ch);
+        var width = 0;
+        for (var i = 0; i < text.length(); i++) {
+            width += getWidth(text.charAt(i));
         }
-        return (int) Math.ceil(result);
+        return width;
     }
 
     public void set(char ch, int size) {
