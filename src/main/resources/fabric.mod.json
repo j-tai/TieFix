@@ -27,6 +27,7 @@
     "TieFix.mixins.json"
   ],
   "depends": {
+    "fabric": "*",
     "minecraft": "1.18.x"
   },
   "recommends": {
