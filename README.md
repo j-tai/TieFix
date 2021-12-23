@@ -15,6 +15,8 @@ Requires Fabric API.
   * Fix: Limit the text based on the default font
 * [**MC-122477**](https://bugs.mojang.com/browse/MC-122477) Linux/GNU: Opening chat sometimes writes 't'
   * Workaround: Ignore a character entered on the first input poll after opening chat
+* [**MC-122645**](https://bugs.mojang.com/browse/MC-122645) Narrator hotkey cannot be customized or disabled
+  * Fix: Disable the narrator hotkey by default (can be re-enabled in the configuration)
 * [**MC-127970**](https://bugs.mojang.com/browse/MC-127970) Using riptide on a trident with an item in your off-hand causes visual glitch with the item in your offhand
   * Fix: Render non-trident items in regular place while using riptide
 * [**MC-140646**](https://bugs.mojang.com/browse/MC-140646) Text fields don't scroll while selecting text with Shift

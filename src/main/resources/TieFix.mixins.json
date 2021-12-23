@@ -11,6 +11,7 @@
     "mc89242.SignEditScreenMixin",
     "mc122477.RenderSystemMixin",
     "mc122477.TextFieldWidgetMixin",
+    "mc122645.KeyboardMixin",
     "mc127970.HeldItemRendererMixin",
     "mc140646.TextFieldWidgetMixin",
     "mc145929.InGameHudMixin",
