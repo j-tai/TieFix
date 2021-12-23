@@ -2,11 +2,14 @@
 
 A Fabric mod that fixes some annoying bugs in the Minecraft client.
 
+Requires Fabric API.
+
 [**Download on Modrinth**](https://modrinth.com/mod/tiefix)
 
 ## Bugs fixed
 
-* [**MC-2071**](https://bugs.mojang.com/browse/MC-2071) Pausing the Game or opening any GUI in a nether portal does not work
+* [**MC-2071**](https://bugs.mojang.com/browse/MC-2071) Pausing the Game or opening any GUI in a nether portal does not
+  work
   * Fix: Allow opening GUIs in a nether portal
 * [**MC-89242**](https://bugs.mojang.com/browse/MC-89242) Length of writing text on sign limited by Resource Pack
   * Fix: Limit the text based on the default font
