@@ -21,6 +21,8 @@
     "options.tiefix.mc147766.bug": "MC-147766",
     "options.tiefix.mc151412": "Fix 'Add Server' not focusing box",
     "options.tiefix.mc151412.bug": "MC-151412",
+    "options.tiefix.mc203401": "Disable double-tap forward to sprint",
+    "options.tiefix.mc203401.bug": "MC-203401",
     "options.tiefix.mc233042": "Fix 'Direct Connect' not focusing box",
     "options.tiefix.mc233042.bug": "MC-233042",
     "options.tiefix.mc237493": "Disable telemetry",

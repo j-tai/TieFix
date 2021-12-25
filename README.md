@@ -27,6 +27,8 @@ Requires Fabric API.
   * Fix: Handle mouse clicks properly
 * [**MC-151412**](https://bugs.mojang.com/browse/MC-151412) "Edit Server Info" window does not focus "Server Name" text field automatically
   * Fix: Make the "Server Name" text field focused
+* [**MC-203401**](https://bugs.mojang.com/browse/MC-203401) Double-tapping forward button to sprint cannot be disabled/reconfigured
+  * Fix: Add option to disable double-tap-to-sprint
 * [**MC-233042**](https://bugs.mojang.com/browse/MC-233042) Server Address field isn't focused when Direct Connection menu is opened
   * Fix: Make the "Server Address" text field focused
 * [**MC-237493**](https://bugs.mojang.com/browse/MC-237493) Telemetry cannot be disabled
