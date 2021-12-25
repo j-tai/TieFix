@@ -17,6 +17,7 @@
     "mc145929.InGameHudMixin",
     "mc147766.TextFieldWidgetMixin",
     "mc151412.AddServerScreenMixin",
+    "mc203401.ClientPlayerEntityMixin",
     "mc233042.DirectConnectScreenMixin",
     "mc237493.TelemetrySenderMixin"
   ],
