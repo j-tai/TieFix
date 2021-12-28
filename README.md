@@ -4,7 +4,7 @@ A Fabric mod that fixes some annoying bugs in the Minecraft client.
 
 Requires Fabric API.
 
-[**Download on Modrinth**](https://modrinth.com/mod/tiefix)
+**Download on [Modrinth](https://modrinth.com/mod/tiefix), [CurseForge](https://www.curseforge.com/minecraft/mc-mods/tiefix), or [GitHub Releases](https://github.com/j-tai/TieFix/releases)**
 
 ## Bugs fixed
 
@@ -42,4 +42,4 @@ The options menu can be opened if you have [Mod Menu](https://modrinth.com/mod/m
 
 ## License
 
-[LGPLv3.](LICENSE)
+[LGPLv3.](https://github.com/j-tai/TieFix/blob/master/LICENSE)
