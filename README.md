@@ -19,6 +19,8 @@ Requires Fabric API.
   * Fix: Disable the narrator hotkey by default (can be re-enabled in the configuration)
 * [**MC-127970**](https://bugs.mojang.com/browse/MC-127970) Using riptide on a trident with an item in your off-hand causes visual glitch with the item in your offhand
   * Fix: Render non-trident items in regular place while using riptide
+* [**MC-136249**](https://bugs.mojang.com/browse/MC-136249) Depth strider decreases Riptide's launching effect when underwater
+  * Fix: Ignore depth strider's increased drag while using riptide
 * [**MC-140646**](https://bugs.mojang.com/browse/MC-140646) Text fields don't scroll while selecting text with Shift
   * Fix: Scroll the text properly
 * [**MC-145929**](https://bugs.mojang.com/browse/MC-145929) Actionbar text may be difficult to read without text background enabled
