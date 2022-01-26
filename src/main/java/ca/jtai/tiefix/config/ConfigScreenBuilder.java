@@ -63,6 +63,8 @@ public class ConfigScreenBuilder {
         );
         addFixToggle("mc122645", c -> c.mc122645_fix, b -> config.mc122645_fix = b);
         addFixToggle("mc127970", c -> c.mc127970_fix, b -> config.mc127970_fix = b);
+        addFixToggle("mc136249", c -> c.mc136249_fix, b -> config.mc136249_fix = b);
+        addMultiplayerToggle(c -> c.mc136249_allowMultiplayer, b -> config.mc136249_allowMultiplayer = b);
         addFixToggle("mc140646", c -> c.mc140646_fix, b -> config.mc140646_fix = b);
         addFixToggle("mc145929", c -> c.mc145929_fix, b -> config.mc145929_fix = b);
         addFixToggle("mc147766", c -> c.mc147766_fix, b -> config.mc147766_fix = b);
@@ -91,6 +93,21 @@ public class ConfigScreenBuilder {
             builder.entryBuilder()
                 .startBooleanToggle(title, getter.apply(config))
                 .setTooltip(new TranslatableText("options.tiefix." + id + ".bug"))
+                .setDefaultValue(getter.apply(Config.DEFAULT))
+                .setSaveConsumer(setter)
+                .build()
+        );
+    }
+
+    private void addMultiplayerToggle(
+        Function<Config, Boolean> getter,
+        Consumer<Boolean> setter
+    ) {
+        var title = indented(new TranslatableText("options.tiefix.enableInMultiplayer"));
+        category.addEntry(
+            builder.entryBuilder()
+                .startBooleanToggle(title, getter.apply(config))
+                .setTooltip(new TranslatableText("options.tiefix.mayTriggerAnticheat"))
                 .setDefaultValue(getter.apply(Config.DEFAULT))
                 .setSaveConsumer(setter)
                 .build()

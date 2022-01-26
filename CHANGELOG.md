@@ -2,6 +2,7 @@
 
 ## master
 
+* Add fix for MC-136249 (Depth strider decreases Riptide's launching effect when underwater)
 * Add fix for MC-122645 (Narrator hotkey cannot be customized or disabled)
 * Add fix for MC-203401 (Double-tapping forward button to sprint cannot be disabled/reconfigured)
 

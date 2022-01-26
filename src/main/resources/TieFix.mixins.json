@@ -13,6 +13,7 @@
     "mc122477.TextFieldWidgetMixin",
     "mc122645.KeyboardMixin",
     "mc127970.HeldItemRendererMixin",
+    "mc136249.LivingEntityMixin",
     "mc140646.TextFieldWidgetMixin",
     "mc145929.InGameHudMixin",
     "mc147766.TextFieldWidgetMixin",
