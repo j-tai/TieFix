@@ -15,3 +15,11 @@ jobs:
 
       - name: Build
         run: ./gradlew build
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: mod
+          path: |
+            build/libs/TieFix-*.jar
+            !build/libs/TieFix-*-dev.jar
+            !build/libs/TieFix-*-sources.jar
