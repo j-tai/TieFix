@@ -6,9 +6,6 @@
   "mixins": [
   ],
   "client": [
-    "mc2071.ClientPlayerEntityMixin",
-    "mc89242.KeyboardMixin",
-    "mc89242.SignEditScreenMixin",
     "mc122477.RenderSystemMixin",
     "mc122477.TextFieldWidgetMixin",
     "mc122645.KeyboardMixin",
@@ -19,8 +16,12 @@
     "mc147766.TextFieldWidgetMixin",
     "mc151412.AddServerScreenMixin",
     "mc203401.ClientPlayerEntityMixin",
+    "mc2071.ClientPlayerEntityMixin",
     "mc233042.DirectConnectScreenMixin",
-    "mc237493.TelemetrySenderMixin"
+    "mc237493.TelemetrySenderMixin",
+    "mc62997.InGameHudMixin",
+    "mc89242.KeyboardMixin",
+    "mc89242.SignEditScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 0

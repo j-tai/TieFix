@@ -13,6 +13,7 @@ public class Config {
     public boolean debug = false;
 
     public boolean mc2071_fix = true;
+    public boolean mc62997_fix = true;
     public boolean mc89242_fix = true;
     public boolean mc122477_fix = Util.getOperatingSystem() == Util.OperatingSystem.LINUX;
     public String mc122477_keys = "";
