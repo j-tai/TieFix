@@ -11,6 +11,8 @@ Requires Fabric API.
 * [**MC-2071**](https://bugs.mojang.com/browse/MC-2071) Pausing the Game or opening any GUI in a nether portal does not
   work
   * Fix: Allow opening GUIs in a nether portal
+* [**MC-62997**](https://bugs.mojang.com/browse/MC-62997) Scoreboard overlaps debug screen
+  * Fix: Hide the scoreboard when the F3 screen is shown
 * [**MC-89242**](https://bugs.mojang.com/browse/MC-89242) Length of writing text on sign limited by Resource Pack
   * Fix: Limit the text based on the default font
 * [**MC-122477**](https://bugs.mojang.com/browse/MC-122477) Linux/GNU: Opening chat sometimes writes 't'
