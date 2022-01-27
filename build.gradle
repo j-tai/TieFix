@@ -1,6 +1,8 @@
 plugins {
     id 'fabric-loom' version '0.10-SNAPSHOT'
     id 'maven-publish'
+    id 'com.modrinth.minotaur' version '1.2.1'
+    id 'com.matthewprenger.cursegradle' version '1.4.0'
 }
 
 sourceCompatibility = JavaVersion.VERSION_17
@@ -58,19 +60,74 @@ jar {
     }
 }
 
-// configure the maven publication
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
+// Mod publication scripts
+
+// Read secrets from secrets.properties
+def secretsFile = file('secrets.properties')
+def secrets = new Properties()
+if (secretsFile.canRead()) {
+    secrets.load(new FileInputStream(secretsFile))
+}
+
+// Read changelog for current version from CHANGELOG.md
+// Ideally, we would only have to run this code if the current task requires it.
+// But CurseGradle doesn't seem to allow setting the changelog at runtime.
+// If I'm wrong, send a PR!
+def theChangelog = null
+new BufferedReader(new FileReader(file('CHANGELOG.md'))).withCloseable {
+    while (true) {
+        def line = it.readLine()
+        if (line == null) {
+            break
+        }
+        if (line.startsWith("## v${project.version} (")) {
+            // Start reading changelog here
+            theChangelog = ''
+        } else if (theChangelog != null) {
+            if (line.startsWith('## ')) {
+                // Stop reading here
+                break
+            }
+            theChangelog += line + '\n'
         }
     }
+    theChangelog = (theChangelog ?: '').trim()
+}
 
-    // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
-    repositories {
-        // Add repositories to publish to here.
-        // Notice: This block does NOT have the same function as the block in the top level.
-        // The repositories here will be used for publishing your artifact, not for
-        // retrieving dependencies.
+task genChangelog() {
+    doLast {
+        new BufferedWriter(new FileWriter(file('build/changelog.md'))).withCloseable {
+            it.write(theChangelog)
+        }
+    }
+}
+
+// Modrinth: ./gradlew publishModrinth
+import com.modrinth.minotaur.TaskModrinthUpload
+
+task publishModrinth(type: TaskModrinthUpload) {
+    token = secrets.getProperty('modrinthToken', '')
+    projectId = 'jxuxsA0D'
+    versionNumber = project.version
+    versionName = 'v' + project.version
+    uploadFile = remapJar
+    changelog = theChangelog
+    addGameVersion project.minecraft_version
+    addLoader 'fabric'
+}
+
+// CurseForge: ./gradlew curseforge
+curseforge {
+    apiKey = secrets.getProperty('curseforgeApiKey', '')
+    project {
+        id = '560957'
+        changelog = theChangelog
+        changelogType = 'markdown'
+        releaseType = 'release'
+        addGameVersion project.minecraft_version
+        mainArtifact remapJar
+    }
+    options {
+        forgeGradleIntegration = false
     }
 }
