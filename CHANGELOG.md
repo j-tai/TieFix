@@ -1,6 +1,6 @@
 # Changelog
 
-## master
+## v1.9.0 (2022-01-26)
 
 * Add fix for MC-136249 (Depth strider decreases Riptide's launching effect when underwater)
 * Add fix for MC-62997 (Scoreboard overlaps debug screen)
