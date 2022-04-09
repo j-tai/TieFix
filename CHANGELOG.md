@@ -1,8 +1,10 @@
 # Changelog
 
-## master
+## v1.10.0 (2022-04-09)
 
-* Reorganize settings screen
+* Update to Minecraft 1.18.2
+* Reorganize options screen
+* Add fix for MC-12829 (Flying through ladders/vines/scaffolding in creative mode slows you down)
 * Fix crash caused by fix for MC-140646 (Text fields don't scroll while selecting text with Shift)
 
 ## v1.9.0 (2022-01-26)
