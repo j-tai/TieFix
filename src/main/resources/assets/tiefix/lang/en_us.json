@@ -7,6 +7,8 @@
   "options.tiefix.category.misc": "Miscellaneous",
   "options.tiefix.mc2071": "Allow opening GUIs in a nether portal",
   "options.tiefix.mc2071.bug": "MC-2071",
+  "options.tiefix.mc12829": "Fix slow flying in ladders/vines/etc.",
+  "options.tiefix.mc12829.bug": "MC-12829",
   "options.tiefix.mc62997": "Hide scoreboard when F3 is enabled",
   "options.tiefix.mc62997.bug": "MC-62997",
   "options.tiefix.mc89242": "Fix line limit when writing sign",
