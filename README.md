@@ -40,6 +40,8 @@ Requires Fabric API.
   * Fix: Render non-trident items in regular place while using riptide
 
 ### Gameplay & Movement
+* [**MC-12829**](https://bugs.mojang.com/browse/MC-12829) Flying through ladders/vines/scaffolding in creative mode slows you down
+  * Fix: Ignore climbable blocks when flying
 * [**MC-136249**](https://bugs.mojang.com/browse/MC-136249) Depth strider decreases Riptide's launching effect when underwater
   * Fix: Ignore depth strider's increased drag while using riptide
 

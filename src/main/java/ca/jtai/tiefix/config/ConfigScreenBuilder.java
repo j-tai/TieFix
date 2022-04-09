@@ -77,6 +77,7 @@ public class ConfigScreenBuilder {
 
         beginCategory();
         addMultiplayerToggle(c -> c.gameplayAllowMultiplayer, b -> config.gameplayAllowMultiplayer = b);
+        addFixToggle("mc12829", c -> c.mc12829_fix, b -> config.mc12829_fix = b);
         addFixToggle("mc136249", c -> c.mc136249_fix, b -> config.mc136249_fix = b);
         endCategory("gameplay");
 
