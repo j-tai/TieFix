@@ -125,7 +125,9 @@ curseforge {
         changelogType = 'markdown'
         releaseType = 'release'
         addGameVersion project.minecraft_version
-        mainArtifact remapJar
+        mainArtifact(remapJar) {
+            displayName = "v$project.version"
+        }
     }
     options {
         forgeGradleIntegration = false
