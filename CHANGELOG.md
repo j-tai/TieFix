@@ -1,5 +1,10 @@
 # Changelog
 
+## master
+
+* Reorganize settings screen
+* Fix crash caused by fix for MC-140646 (Text fields don't scroll while selecting text with Shift)
+
 ## v1.9.0 (2022-01-26)
 
 * Add fix for MC-136249 (Depth strider decreases Riptide's launching effect when underwater)

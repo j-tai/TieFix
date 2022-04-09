@@ -1,5 +1,6 @@
 package ca.jtai.tiefix.config;
 
+import me.shedaniel.clothconfig2.api.AbstractConfigListEntry;
 import me.shedaniel.clothconfig2.api.ConfigBuilder;
 import me.shedaniel.clothconfig2.api.ConfigCategory;
 import net.minecraft.client.gui.screen.Screen;
@@ -7,6 +8,8 @@ import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
@@ -25,56 +28,76 @@ public class ConfigScreenBuilder {
     private final Config config;
     private final ConfigBuilder builder;
     private final ConfigCategory category;
+    private ArrayList<AbstractConfigListEntry<?>> entries;
 
     private ConfigScreenBuilder(Screen parent, Config config) {
         this.config = config;
         builder = ConfigBuilder.create()
             .setParentScreen(parent)
-            .setTitle(new TranslatableText("options.tiefix.title"))
+            .setTitle(translate("title"))
             .setSavingRunnable(() -> ConfigHelper.writeConfig(config));
-        category = builder.getOrCreateCategory(
-            new TranslatableText("category.tiefix.main")
-        );
+        category = builder.getOrCreateCategory( translate("main") );
     }
 
     /**
      * Build the options screen. Do not call this method more than once -- assume that it consumes {@code this}.
      */
     private Screen build() {
+        beginCategory();
         addFixToggle("mc2071", c -> c.mc2071_fix, b -> config.mc2071_fix = b);
         addFixToggle("mc62997", c -> c.mc62997_fix, b -> config.mc62997_fix = b);
         addFixToggle("mc89242", c -> c.mc89242_fix, b -> config.mc89242_fix = b);
         addFixToggle("mc122477", c -> c.mc122477_fix, b -> config.mc122477_fix = b);
-        category.addEntry(
+        entries.add(
             builder.entryBuilder()
                 .startStrField(
-                    indented(new TranslatableText("options.tiefix.mc122477_keys")),
+                    indented(translate("mc122477_keys")),
                     config.mc122477_keys
                 )
                 .setDefaultValue("")
                 .setSaveConsumer(value -> config.mc122477_keys = value)
                 .build()
         );
-        category.addEntry(
-            builder.entryBuilder()
-                .startTextDescription(
-                    new TranslatableText("options.tiefix.mc122477.explanation")
-                )
-                .build()
-        );
-        addFixToggle("mc122645", c -> c.mc122645_fix, b -> config.mc122645_fix = b);
-        addFixToggle("mc127970", c -> c.mc127970_fix, b -> config.mc127970_fix = b);
-        addFixToggle("mc136249", c -> c.mc136249_fix, b -> config.mc136249_fix = b);
-        addMultiplayerToggle(c -> c.mc136249_allowMultiplayer, b -> config.mc136249_allowMultiplayer = b);
+        addDescription("mc122477.explanation");
         addFixToggle("mc140646", c -> c.mc140646_fix, b -> config.mc140646_fix = b);
         addFixToggle("mc145929", c -> c.mc145929_fix, b -> config.mc145929_fix = b);
         addFixToggle("mc147766", c -> c.mc147766_fix, b -> config.mc147766_fix = b);
         addFixToggle("mc151412", c -> c.mc151412_fix, b -> config.mc151412_fix = b);
-        addFixToggle("mc203401", c -> c.mc203401_fix, b -> config.mc203401_fix = b);
         addFixToggle("mc233042", c -> c.mc233042_fix, b -> config.mc233042_fix = b);
+        endCategory("ui");
+
+        beginCategory();
+        addFixToggle("mc122645", c -> c.mc122645_fix, b -> config.mc122645_fix = b);
+        addFixToggle("mc203401", c -> c.mc203401_fix, b -> config.mc203401_fix = b);
+        endCategory("controls");
+
+        beginCategory();
+        addFixToggle("mc127970", c -> c.mc127970_fix, b -> config.mc127970_fix = b);
+        endCategory("audioVisual");
+
+        beginCategory();
+        addMultiplayerToggle(c -> c.gameplayAllowMultiplayer, b -> config.gameplayAllowMultiplayer = b);
+        addFixToggle("mc136249", c -> c.mc136249_fix, b -> config.mc136249_fix = b);
+        endCategory("gameplay");
+
+        beginCategory();
         addFixToggle("mc237493", c -> c.mc237493_fix, b -> config.mc237493_fix = b);
+        endCategory("misc");
 
         return builder.build();
+    }
+
+    private void beginCategory() {
+        entries = new ArrayList<>();
+    }
+
+    private void endCategory(String id) {
+        category.addEntry(
+            builder.entryBuilder()
+                .startSubCategory(translate("category." + id), Collections.unmodifiableList(entries))
+                .setExpanded(true)
+                .build()
+        );
     }
 
     /**
@@ -89,11 +112,11 @@ public class ConfigScreenBuilder {
         Function<Config, Boolean> getter,
         Consumer<Boolean> setter
     ) {
-        var title = new TranslatableText("options.tiefix." + id);
-        category.addEntry(
+        var title = translate(id);
+        entries.add(
             builder.entryBuilder()
                 .startBooleanToggle(title, getter.apply(config))
-                .setTooltip(new TranslatableText("options.tiefix." + id + ".bug"))
+                .setTooltip(translate(id + ".bug"))
                 .setDefaultValue(getter.apply(Config.DEFAULT))
                 .setSaveConsumer(setter)
                 .build()
@@ -104,15 +127,26 @@ public class ConfigScreenBuilder {
         Function<Config, Boolean> getter,
         Consumer<Boolean> setter
     ) {
-        var title = indented(new TranslatableText("options.tiefix.enableInMultiplayer"));
-        category.addEntry(
+        addDescription("mayTriggerAnticheat");
+        entries.add(
             builder.entryBuilder()
-                .startBooleanToggle(title, getter.apply(config))
-                .setTooltip(new TranslatableText("options.tiefix.mayTriggerAnticheat"))
+                .startBooleanToggle(translate("enableInMultiplayer"), getter.apply(config))
                 .setDefaultValue(getter.apply(Config.DEFAULT))
                 .setSaveConsumer(setter)
                 .build()
         );
+    }
+
+    private void addDescription(String id) {
+        entries.add(
+            builder.entryBuilder()
+                .startTextDescription(translate(id))
+                .build()
+        );
+    }
+
+    private static Text translate(String id) {
+        return new TranslatableText("options.tiefix." + id);
     }
 
     private static Text indented(Text text) {

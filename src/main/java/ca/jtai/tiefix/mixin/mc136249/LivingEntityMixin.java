@@ -25,7 +25,7 @@ public class LivingEntityMixin {
 
         var config = TieFix.getConfig();
         var fixIsEnabled = config.mc136249_fix
-            && (config.mc136249_allowMultiplayer || MinecraftClient.getInstance().isInSingleplayer());
+            && (config.gameplayAllowMultiplayer || MinecraftClient.getInstance().isInSingleplayer());
         if (fixIsEnabled) {
             return 0;
         } else {
