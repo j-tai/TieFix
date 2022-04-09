@@ -1,5 +1,10 @@
 {
   "options.tiefix.title": "TieFix Settings",
+  "options.tiefix.category.ui": "UI & HUD",
+  "options.tiefix.category.controls": "Controls",
+  "options.tiefix.category.audioVisual": "Audio & Visual",
+  "options.tiefix.category.gameplay": "Gameplay & Movement",
+  "options.tiefix.category.misc": "Miscellaneous",
   "options.tiefix.mc2071": "Allow opening GUIs in a nether portal",
   "options.tiefix.mc2071.bug": "MC-2071",
   "options.tiefix.mc62997": "Hide scoreboard when F3 is enabled",
@@ -30,6 +35,6 @@
   "options.tiefix.mc233042.bug": "MC-233042",
   "options.tiefix.mc237493": "Disable telemetry",
   "options.tiefix.mc237493.bug": "MC-237493",
-  "options.tiefix.enableInMultiplayer": "Allow in multiplayer",
-  "options.tiefix.mayTriggerAnticheat": "Warning: may trigger anticheat on 3rd-party servers"
+  "options.tiefix.enableInMultiplayer": "Enable in multiplayer",
+  "options.tiefix.mayTriggerAnticheat": "Warning: In multiplayer, these fixes could trigger the anticheat. Use with caution."
 }

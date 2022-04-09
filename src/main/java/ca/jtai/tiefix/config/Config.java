@@ -1,5 +1,6 @@
 package ca.jtai.tiefix.config;
 
+import com.google.gson.annotations.SerializedName;
 import net.minecraft.util.Util;
 
 public class Config {
@@ -12,6 +13,9 @@ public class Config {
      */
     public boolean debug = false;
 
+    @SerializedName("mc136249_allowMultiplayer") // Compatibility with old config files
+    public boolean gameplayAllowMultiplayer = false;
+
     public boolean mc2071_fix = true;
     public boolean mc62997_fix = true;
     public boolean mc89242_fix = true;
@@ -20,7 +24,6 @@ public class Config {
     public boolean mc122645_fix = true;
     public boolean mc127970_fix = true;
     public boolean mc136249_fix = true;
-    public boolean mc136249_allowMultiplayer = false;
     public boolean mc140646_fix = true;
     public boolean mc147766_fix = true;
     public boolean mc145929_fix = true;
