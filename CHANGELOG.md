@@ -1,5 +1,9 @@
 # Changelog
 
+## master
+
+* Add fix for MC-4490 (Fishing line not attached to fishing rod in third person while crouching)
+
 ## v1.10.0 (2022-04-09)
 
 * Update to Minecraft 1.18.2
