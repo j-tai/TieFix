@@ -6,24 +6,27 @@
   "mixins": [
   ],
   "client": [
-    "mc2071.ClientPlayerEntityMixin",
-    "mc4490.FishingBobberEntityRendererMixin",
-    "mc12829.LivingEntityMixin",
-    "mc62997.InGameHudMixin",
-    "mc89242.KeyboardMixin",
-    "mc89242.SignEditScreenMixin",
     "mc122477.RenderSystemMixin",
     "mc122477.TextFieldWidgetMixin",
     "mc122645.KeyboardMixin",
     "mc127970.HeldItemRendererMixin",
+    "mc12829.LivingEntityMixin",
     "mc136249.LivingEntityMixin",
     "mc140646.TextFieldWidgetMixin",
     "mc145929.InGameHudMixin",
     "mc147766.TextFieldWidgetMixin",
     "mc151412.AddServerScreenMixin",
     "mc203401.ClientPlayerEntityMixin",
+    "mc2071.ClientPlayerEntityMixin",
     "mc233042.DirectConnectScreenMixin",
-    "mc237493.TelemetrySenderMixin"
+    "mc237493.TelemetrySenderMixin",
+    "mc4490.FishingBobberEntityRendererMixin",
+    "mc53312.IllagerEntityModelMixin",
+    "mc53312.VillagerResemblingModelMixin",
+    "mc53312.ZombieVillagerEntityModelMixin",
+    "mc62997.InGameHudMixin",
+    "mc89242.KeyboardMixin",
+    "mc89242.SignEditScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 0
