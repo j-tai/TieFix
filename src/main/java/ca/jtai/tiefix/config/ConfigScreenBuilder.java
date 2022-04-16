@@ -73,6 +73,7 @@ public class ConfigScreenBuilder {
 
         beginCategory();
         addFixToggle("mc4490", c -> c.mc4490_fix, b -> config.mc4490_fix = b);
+        addFixToggle("mc53312", c -> c.mc53312_fix, b -> config.mc53312_fix = b, "reloadToApply");
         addFixToggle("mc127970", c -> c.mc127970_fix, b -> config.mc127970_fix = b);
         endCategory("audioVisual");
 
@@ -112,13 +113,20 @@ public class ConfigScreenBuilder {
     private void addFixToggle(
         String id,
         Function<Config, Boolean> getter,
-        Consumer<Boolean> setter
+        Consumer<Boolean> setter,
+        String... extraTooltips
     ) {
         var title = translate(id);
+        var tooltip = translate(id + ".bug");
+        for (var extra : extraTooltips) {
+            tooltip.append("\n");
+            tooltip.append(translate(extra));
+        }
+
         entries.add(
             builder.entryBuilder()
                 .startBooleanToggle(title, getter.apply(config))
-                .setTooltip(translate(id + ".bug"))
+                .setTooltip(tooltip)
                 .setDefaultValue(getter.apply(Config.DEFAULT))
                 .setSaveConsumer(setter)
                 .build()
@@ -147,7 +155,7 @@ public class ConfigScreenBuilder {
         );
     }
 
-    private static Text translate(String id) {
+    private static TranslatableText translate(String id) {
         return new TranslatableText("options.tiefix." + id);
     }
 

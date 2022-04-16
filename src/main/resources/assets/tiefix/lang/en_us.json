@@ -11,6 +11,8 @@
   "options.tiefix.mc4490.bug": "MC-4490",
   "options.tiefix.mc12829": "Fix slow flying in ladders/vines/etc.",
   "options.tiefix.mc12829.bug": "MC-12829",
+  "options.tiefix.mc53312": "Fix villager robe being cut off",
+  "options.tiefix.mc53312.bug": "MC-53312",
   "options.tiefix.mc62997": "Hide scoreboard when F3 is enabled",
   "options.tiefix.mc62997.bug": "MC-62997",
   "options.tiefix.mc89242": "Fix line limit when writing sign",
@@ -40,5 +42,6 @@
   "options.tiefix.mc237493": "Disable telemetry",
   "options.tiefix.mc237493.bug": "MC-237493",
   "options.tiefix.enableInMultiplayer": "Enable in multiplayer",
-  "options.tiefix.mayTriggerAnticheat": "Warning: In multiplayer, these fixes could trigger the anticheat. Use with caution."
+  "options.tiefix.mayTriggerAnticheat": "Warning: In multiplayer, these fixes could trigger the anticheat. Use with caution.",
+  "options.tiefix.reloadToApply": "Reload resources (F3+T) to apply changes"
 }

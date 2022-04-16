@@ -2,6 +2,7 @@
 
 ## master
 
+* Add fix for MC-53312 (Illager/(zombie) villager/witch robes don't render the last two rows of pixels)
 * Add fix for MC-4490 (Fishing line not attached to fishing rod in third person while crouching)
 
 ## v1.10.0 (2022-04-09)

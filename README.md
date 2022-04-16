@@ -36,9 +36,14 @@ Requires Fabric API.
   * Fix: Add option to disable double-tap-to-sprint
 
 ### Audio & Visual
-* [**MC-4490**](https://bugs.mojang.com/browse/MC-4490) Fishing line not attached to fishing rod in third person while crouching
+* [**MC-4490**](https://bugs.mojang.com/browse/MC-4490) Fishing line not attached to fishing rod in third person while
+  crouching
   * Fix: Render the fishing line in the correct place
-* [**MC-127970**](https://bugs.mojang.com/browse/MC-127970) Using riptide on a trident with an item in your off-hand causes visual glitch with the item in your offhand
+* [**MC-53312**](https://bugs.mojang.com/browse/MC-53312) Illager/(zombie) villager/witch robes don't render the last
+  two rows of pixels
+  * Fix: Render the last two rows
+* [**MC-127970**](https://bugs.mojang.com/browse/MC-127970) Using riptide on a trident with an item in your off-hand
+  causes visual glitch with the item in your offhand
   * Fix: Render non-trident items in regular place while using riptide
 
 ### Gameplay & Movement
