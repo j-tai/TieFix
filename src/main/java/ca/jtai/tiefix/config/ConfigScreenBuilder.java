@@ -46,6 +46,7 @@ public class ConfigScreenBuilder {
         beginCategory();
         addFixToggle("mc2071", c -> c.mc2071_fix, b -> config.mc2071_fix = b);
         addFixToggle("mc62997", c -> c.mc62997_fix, b -> config.mc62997_fix = b);
+        addFixToggle("mc79545", c -> c.mc79545_fix, b -> config.mc79545_fix = b);
         addFixToggle("mc89242", c -> c.mc89242_fix, b -> config.mc89242_fix = b);
         addFixToggle("mc122477", c -> c.mc122477_fix, b -> config.mc122477_fix = b);
         entries.add(
