@@ -14,6 +14,9 @@ Requires Fabric API.
   * Fix: Allow opening GUIs in a nether portal
 * [**MC-62997**](https://bugs.mojang.com/browse/MC-62997) Scoreboard overlaps debug screen
   * Fix: Hide the scoreboard when the F3 screen is shown
+* [**MC-79545**](https://bugs.mojang.com/browse/MC-79545) The experience bar disappears when too many levels are given
+  to the player
+  * Fix: Show the experience bar
 * [**MC-89242**](https://bugs.mojang.com/browse/MC-89242) Length of writing text on sign limited by Resource Pack
   * Fix: Limit the text based on the default font
 * [**MC-122477**](https://bugs.mojang.com/browse/MC-122477) Linux/GNU: Opening chat sometimes writes 't'

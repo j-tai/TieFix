@@ -15,6 +15,8 @@
   "options.tiefix.mc53312.bug": "MC-53312",
   "options.tiefix.mc62997": "Hide scoreboard when F3 is enabled",
   "options.tiefix.mc62997.bug": "MC-62997",
+  "options.tiefix.mc79545": "Fix XP bar with high XP levels",
+  "options.tiefix.mc79545.bug": "MC-79545",
   "options.tiefix.mc89242": "Fix line limit when writing sign",
   "options.tiefix.mc89242.bug": "MC-89242",
   "options.tiefix.mc122477": "Fix 't' when opening chat (Linux only)",
