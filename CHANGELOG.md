@@ -4,6 +4,8 @@
 
 * Add fix for MC-53312 (Illager/(zombie) villager/witch robes don't render the last two rows of pixels)
 * Add fix for MC-4490 (Fishing line not attached to fishing rod in third person while crouching)
+* Add fix for MC-80859 (Starting to drag item stacks over other compatible stacks makes the latter invisible until
+  appearance change (stack size increases))
 * Add fix for MC-79545 (The experience bar disappears when too many levels are given to the player)
 
 ## v1.10.0 (2022-04-09)

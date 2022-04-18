@@ -25,6 +25,7 @@ public class Config {
     public boolean mc53312_fix = true;
     public boolean mc62997_fix = true;
     public boolean mc79545_fix = true;
+    public boolean mc80859_fix = true;
     public boolean mc89242_fix = true;
     public boolean mc122477_fix = Util.getOperatingSystem() == Util.OperatingSystem.LINUX;
     public String mc122477_keys = "";
