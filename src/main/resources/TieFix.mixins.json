@@ -26,6 +26,7 @@
     "mc53312.ZombieVillagerEntityModelMixin",
     "mc62997.InGameHudMixin",
     "mc79545.InGameHudMixin",
+    "mc80859.HandledScreenMixin",
     "mc89242.KeyboardMixin",
     "mc89242.SignEditScreenMixin"
   ],

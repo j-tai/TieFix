@@ -17,6 +17,9 @@ Requires Fabric API.
 * [**MC-79545**](https://bugs.mojang.com/browse/MC-79545) The experience bar disappears when too many levels are given
   to the player
   * Fix: Show the experience bar
+* [**MC-80859**](https://bugs.mojang.com/browse/MC-80859) Starting to drag item stacks over other compatible stacks
+  makes the latter invisible until appearance change (stack size increases)
+  * Fix: Display the item stack properly
 * [**MC-89242**](https://bugs.mojang.com/browse/MC-89242) Length of writing text on sign limited by Resource Pack
   * Fix: Limit the text based on the default font
 * [**MC-122477**](https://bugs.mojang.com/browse/MC-122477) Linux/GNU: Opening chat sometimes writes 't'

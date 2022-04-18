@@ -17,6 +17,8 @@
   "options.tiefix.mc62997.bug": "MC-62997",
   "options.tiefix.mc79545": "Fix XP bar with high XP levels",
   "options.tiefix.mc79545.bug": "MC-79545",
+  "options.tiefix.mc80859": "Fix invisible items when dragging",
+  "options.tiefix.mc80859.bug": "MC-80859",
   "options.tiefix.mc89242": "Fix line limit when writing sign",
   "options.tiefix.mc89242.bug": "MC-89242",
   "options.tiefix.mc122477": "Fix 't' when opening chat (Linux only)",
