@@ -2,7 +2,7 @@ package ca.jtai.tiefix.fixes.mc89242;
 
 import com.google.gson.Gson;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.text.LiteralText;
+import net.minecraft.text.Text;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -18,7 +18,7 @@ public class SizemapDumper {
         if (player == null) {
             return;
         }
-        player.sendMessage(new LiteralText("TieFix: Dumping the sizemap..."), false);
+        player.sendMessage(Text.of("TieFix: Dumping the sizemap..."), false);
 
         var sizemap = new Sizemap();
 
@@ -28,7 +28,7 @@ public class SizemapDumper {
             var width = renderer.getWidth(String.valueOf(ch));
             // Sanity checks
             if (width <= 0) {
-                player.sendMessage(new LiteralText(
+                player.sendMessage(Text.of(
                     "W: U+%04X '%c' has small or negative width %d".formatted(codepoint, ch, width)
                 ), false);
             }
@@ -39,7 +39,7 @@ public class SizemapDumper {
         var file = new File("sizemap.json");
         try (var writer = new FileWriter(file)) {
             gson.toJson(sizemap, writer);
-            player.sendMessage(new LiteralText("Saved sizemap to sizemap.json"), false);
+            player.sendMessage(Text.of("Saved sizemap to sizemap.json"), false);
         } catch (Exception e) {
             e.printStackTrace();
         }

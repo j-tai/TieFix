@@ -28,9 +28,9 @@
   ],
   "depends": {
     "fabric-resource-loader-v0": "*",
-    "minecraft": "1.18.x"
+    "minecraft": "1.19.x"
   },
   "recommends": {
-    "modmenu": ">=3"
+    "modmenu": ">=4"
   }
 }

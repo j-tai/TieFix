@@ -32,7 +32,7 @@ public class TieFix implements ClientModInitializer {
                 @Override
                 public void reload(ResourceManager manager) {
                     var id = new Identifier("tiefix", "sizemap.json");
-                    try (var reader = new InputStreamReader(manager.getResource(id).getInputStream())) {
+                    try (var reader = new InputStreamReader(manager.getResource(id).get().getInputStream())) {
                         var gson = new Gson();
                         sizemap = gson.fromJson(reader, Sizemap.class);
                     } catch (Exception e) {

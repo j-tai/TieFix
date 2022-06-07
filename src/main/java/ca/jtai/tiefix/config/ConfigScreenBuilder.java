@@ -4,9 +4,8 @@ import me.shedaniel.clothconfig2.api.AbstractConfigListEntry;
 import me.shedaniel.clothconfig2.api.ConfigBuilder;
 import me.shedaniel.clothconfig2.api.ConfigCategory;
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.text.LiteralText;
+import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -36,7 +35,7 @@ public class ConfigScreenBuilder {
             .setParentScreen(parent)
             .setTitle(translate("title"))
             .setSavingRunnable(() -> ConfigHelper.writeConfig(config));
-        category = builder.getOrCreateCategory( translate("main") );
+        category = builder.getOrCreateCategory(translate("main"));
     }
 
     /**
@@ -157,11 +156,11 @@ public class ConfigScreenBuilder {
         );
     }
 
-    private static TranslatableText translate(String id) {
-        return new TranslatableText("options.tiefix." + id);
+    private static MutableText translate(String id) {
+        return Text.translatable("options.tiefix." + id);
     }
 
-    private static Text indented(Text text) {
-        return new LiteralText(" ".repeat(8)).append(text);
+    private static MutableText indented(Text text) {
+        return Text.literal(" ".repeat(8)).append(text);
     }
 }
