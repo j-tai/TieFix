@@ -74,7 +74,6 @@ public class ConfigScreenBuilder {
 
         beginCategory();
         addFixToggle("mc4490", c -> c.mc4490_fix, b -> config.mc4490_fix = b);
-        addFixToggle("mc53312", c -> c.mc53312_fix, b -> config.mc53312_fix = b, "reloadToApply");
         addFixToggle("mc127970", c -> c.mc127970_fix, b -> config.mc127970_fix = b);
         endCategory("audioVisual");
 

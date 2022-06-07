@@ -1,7 +1,8 @@
 # Changelog
 
-## master
+## v1.11.0 (2022-06-07)
 
+* Update to Minecraft 1.19
 * Add fix for MC-53312 (Illager/(zombie) villager/witch robes don't render the last two rows of pixels)
 * Add fix for MC-4490 (Fishing line not attached to fishing rod in third person while crouching)
 * Add fix for MC-80859 (Starting to drag item stacks over other compatible stacks makes the latter invisible until
