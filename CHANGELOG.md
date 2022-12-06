@@ -1,5 +1,9 @@
 # Changelog
 
+## master
+
+* Update to Minecraft 1.19.3
+
 ## v1.11.0 (2022-06-07)
 
 * Update to Minecraft 1.19
