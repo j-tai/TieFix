@@ -1,6 +1,6 @@
 # Changelog
 
-## master
+## v1.12.0 (2022-12-08)
 
 * Update to Minecraft 1.19.3
 * Remove fix for MC-145929 as it has been fixed in the vanilla game
