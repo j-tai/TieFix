@@ -1,7 +1,7 @@
 plugins {
-    id 'fabric-loom' version '0.12-SNAPSHOT'
+    id 'fabric-loom' version '1.0-SNAPSHOT'
     id 'maven-publish'
-    id 'com.modrinth.minotaur' version '1.2.1'
+    id 'com.modrinth.minotaur' version '2.+'
     id 'com.matthewprenger.cursegradle' version '1.4.0'
 }
 
@@ -105,15 +105,15 @@ task genChangelog() {
 // Modrinth: ./gradlew publishModrinth
 import com.modrinth.minotaur.TaskModrinthUpload
 
-task publishModrinth(type: TaskModrinthUpload) {
+modrinth {
     token = secrets.getProperty('modrinthToken', '')
     projectId = 'jxuxsA0D'
     versionNumber = project.version
     versionName = 'v' + project.version
     uploadFile = remapJar
     changelog = theChangelog
-    addGameVersion project.minecraft_version
-    addLoader 'fabric'
+    gameVersions = [project.minecraft_version]
+    loaders = ['fabric']
 }
 
 // CurseForge: ./gradlew curseforge
