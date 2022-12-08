@@ -19,8 +19,6 @@ import java.io.InputStreamReader;
 public class TieFix implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        config = ConfigHelper.readConfig();
-
         // Sizemap loader
         ResourceManagerHelper.get(ResourceType.CLIENT_RESOURCES).registerReloadListener(
             new SimpleSynchronousResourceReloadListener() {
@@ -49,6 +47,11 @@ public class TieFix implements ClientModInitializer {
     private static Sizemap sizemap = null;
 
     public static Config getConfig() {
+        // We can't initialize this in onInitializeClient, because the config is
+        // needed before the client is initialized.
+        if (config == null) {
+            config = ConfigHelper.readConfig();
+        }
         return config;
     }
 

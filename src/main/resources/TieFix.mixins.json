@@ -17,12 +17,13 @@
     "mc203401.ClientPlayerEntityMixin",
     "mc2071.ClientPlayerEntityMixin",
     "mc237493.TelemetrySenderMixin",
+    "mc237493.UserPropertiesMixin",
     "mc4490.FishingBobberEntityRendererMixin",
     "mc62997.InGameHudMixin",
     "mc79545.InGameHudMixin",
     "mc80859.HandledScreenMixin",
-    "mc89242.KeyboardMixin",
-    "mc89242.SignEditScreenMixin"
+    "mc89242.AbstractSignEditScreenMixin",
+    "mc89242.KeyboardMixin"
   ],
   "injectors": {
     "defaultRequire": 0

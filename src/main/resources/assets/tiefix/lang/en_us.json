@@ -35,7 +35,7 @@
   "options.tiefix.mc147766.bug": "MC-147766",
   "options.tiefix.mc203401": "Disable double-tap forward to sprint",
   "options.tiefix.mc203401.bug": "MC-203401",
-  "options.tiefix.mc237493": "Disable telemetry",
+  "options.tiefix.mc237493": "Disable telemetry (requires restart)",
   "options.tiefix.mc237493.bug": "MC-237493",
   "options.tiefix.enableInMultiplayer": "Enable in multiplayer",
   "options.tiefix.mayTriggerAnticheat": "Warning: In multiplayer, these fixes could trigger the anticheat. Use with caution.",
