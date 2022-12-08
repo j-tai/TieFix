@@ -61,10 +61,7 @@ public class ConfigScreenBuilder {
         );
         addDescription("mc122477.explanation");
         addFixToggle("mc140646", c -> c.mc140646_fix, b -> config.mc140646_fix = b);
-        addFixToggle("mc145929", c -> c.mc145929_fix, b -> config.mc145929_fix = b);
         addFixToggle("mc147766", c -> c.mc147766_fix, b -> config.mc147766_fix = b);
-        addFixToggle("mc151412", c -> c.mc151412_fix, b -> config.mc151412_fix = b);
-        addFixToggle("mc233042", c -> c.mc233042_fix, b -> config.mc233042_fix = b);
         endCategory("ui");
 
         beginCategory();

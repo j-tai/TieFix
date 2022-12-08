@@ -26,14 +26,8 @@ Requires Fabric API.
   * Workaround: Ignore a character entered on the first input poll after opening chat
 * [**MC-140646**](https://bugs.mojang.com/browse/MC-140646) Text fields don't scroll while selecting text with Shift
   * Fix: Scroll the text properly
-* [**MC-145929**](https://bugs.mojang.com/browse/MC-145929) Actionbar text may be difficult to read without text background enabled
-  * Fix: Add a shadow to the text
 * [**MC-147766**](https://bugs.mojang.com/browse/MC-147766) Shift key stays pressed until press any other key
   * Fix: Handle mouse clicks properly
-* [**MC-151412**](https://bugs.mojang.com/browse/MC-151412) "Edit Server Info" window does not focus "Server Name" text field automatically
-  * Fix: Make the "Server Name" text field focused
-* [**MC-233042**](https://bugs.mojang.com/browse/MC-233042) Server Address field isn't focused when Direct Connection menu is opened
-  * Fix: Make the "Server Address" text field focused
 
 ### Controls
 * [**MC-122645**](https://bugs.mojang.com/browse/MC-122645) Narrator hotkey cannot be customized or disabled

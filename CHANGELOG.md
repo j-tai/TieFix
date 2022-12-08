@@ -3,6 +3,9 @@
 ## master
 
 * Update to Minecraft 1.19.3
+* Remove fix for MC-145929 as it has been fixed in the vanilla game
+* Remove fix for MC-151412 as it has been fixed in the vanilla game
+* Remove fix for MC-233042 as it has been fixed in the vanilla game
 
 ## v1.11.0 (2022-06-07)
 
