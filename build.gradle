@@ -102,7 +102,7 @@ task genChangelog() {
     }
 }
 
-// Modrinth: ./gradlew publishModrinth
+// Modrinth: ./gradlew modrinth
 import com.modrinth.minotaur.TaskModrinthUpload
 
 modrinth {
@@ -114,6 +114,7 @@ modrinth {
     changelog = theChangelog
     gameVersions = [project.minecraft_version]
     loaders = ['fabric']
+    syncBodyFrom = rootProject.file("README.md").text
 }
 
 // CurseForge: ./gradlew curseforge
