@@ -18,4 +18,5 @@ Edit `gradle.properties` and update the fields. There is a link provided in that
 2. `./gradlew publishModrinth`
 3. `./gradlew curseforge`
 4. Check that the publishing went well, and fix anything if needed
-5. Publish to GitHub releases
+5. Copy the README into the mod description in Modrinth and CurseForge
+6. Publish to GitHub releases
