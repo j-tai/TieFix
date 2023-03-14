@@ -10,12 +10,13 @@
 
 ## Updating to a new Minecraft version
 
-Edit `gradle.properties` and update the fields. There is a link provided in that file to get the updated values.
+1. Edit `gradle.properties` and update the fields. There is a link provided in that file to get the updated values.
+2. Update the Minecraft version in `fabric.mod.json`.
 
 ## Releasing a new version
 
 1. Update the mod version in `gradle.properties` and change the `master` section to the version number in `CHANGELOG.md`.
-2. `./gradlew publishModrinth`
+2. `./gradlew modrinth`
 3. `./gradlew curseforge`
 4. Check that the publishing went well, and fix anything if needed
 5. Copy the README into the mod description in Modrinth and CurseForge
