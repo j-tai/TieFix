@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.12.1 (2023-03-14)
+
+* Disable MC-12829 fix in multiplayer by default (@mvilk)
+* Add Simplified Chinese language support (@Cccc-owo)
+
 ## v1.12.0 (2022-12-08)
 
 * Update to Minecraft 1.19.3
