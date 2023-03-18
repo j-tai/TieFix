@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.13.0 (2023-03-17)
+
+* Update to Minecraft 1.19.4
+
 ## v1.12.1 (2023-03-14)
 
 * Disable MC-12829 fix in multiplayer by default (@mvilk)
