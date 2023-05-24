@@ -22,7 +22,7 @@
     "options.tiefix.mc122477": "Corriger la touche 't' lors de l'ouverture du chat (Linux uniquement)",
     "options.tiefix.mc122477.bug": "MC-122477",
     "options.tiefix.mc122477_keys": "Touches à ignorer",
-    "options.tiefix.mc122477.explanation": "Lorsqu'une pression de touche est détectée immédiatement après l'ouverture du chat, elle sera ignorée uniquement si elle est présente dans \"Touches à ignorer\". Si la case est vide, toutes les caractères seront ignorés. Si vous constatez que le chat ignore parfois votre première pression de touche, définissez-la sur vos raccourcis d'inventaire, de chat et de commande (par exemple, "et/"), ainsi que sur tous les raccourcis modifiés qui peuvent immédiatement se concentrer sur une zone de texte. Si vous n'êtes pas sûr, laissez-la vide.",
+    "options.tiefix.mc122477.explanation": "Lorsqu'une pression de touche est détectée immédiatement après l'ouverture du chat, elle sera ignorée uniquement si elle est présente dans \"Touches à ignorer\". Si la case est vide, toutes les caractères seront ignorés. Si vous constatez que le chat ignore parfois votre première pression de touche, définissez - la sur vos raccourcis d 'inventaire, de chat et de commande (par exemple, \"et/\"), ainsi que sur tous les raccourcis modifiés qui peuvent immédiatement se concentrer sur une zone de texte. Si vous n'êtes pas sûr, laissez - la vide.",
     "options.tiefix.mc122645": "Désactiver la touche de narration",
     "options.tiefix.mc122645.bug": "MC-122645",
     "options.tiefix.mc127970": "Corriger l'objet de la main secondaire lors de l'utilisation de Riptide",
