@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.13.1 (2023-06-08)
+
+* Add French language support (@Calvineries)
+
 ## v1.13.0 (2023-03-17)
 
 * Update to Minecraft 1.19.4
