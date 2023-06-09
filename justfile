@@ -20,6 +20,6 @@ decompile:
 # Publish to Modrinth and CurseForge
 publish: build
     {{gradle}} modrinth
-    - {{open}} 'https://modrinth.com/mod/tiefix/versions'
+    -{{open}} 'https://modrinth.com/mod/tiefix/versions'
     {{gradle}} curseforge
-    - {{open}} 'https://www.curseforge.com/minecraft/mc-mods/tiefix/files'
+    -{{open}} 'https://legacy.curseforge.com/minecraft/mc-mods/tiefix/files'

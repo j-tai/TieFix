@@ -15,7 +15,7 @@ import java.util.function.Predicate;
 public class AbstractSignEditScreenMixin {
     @Shadow
     @Final
-    protected SignBlockEntity blockEntity;
+    private SignBlockEntity blockEntity;
 
     @ModifyArg(method = "init", at = @At(
         value = "INVOKE",

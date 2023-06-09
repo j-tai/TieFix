@@ -1,5 +1,9 @@
 # Changelog
 
+## master
+
+* Update to Minecraft 1.20
+
 ## v1.13.1 (2023-06-08)
 
 * Add French language support (@Calvineries)

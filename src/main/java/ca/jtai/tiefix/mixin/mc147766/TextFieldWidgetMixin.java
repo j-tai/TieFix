@@ -7,18 +7,18 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(value = TextFieldWidget.class, priority = TieFix.MIXIN_PRIORITY)
 public class TextFieldWidgetMixin {
     @Shadow
     private boolean selecting;
 
-    @Inject(method = "mouseClicked", at = @At(
+    @Inject(method = "onClick", at = @At(
         value = "INVOKE",
         target = "Lnet/minecraft/client/gui/widget/TextFieldWidget;setCursor(I)V"
     ))
-    private void onKeyPressed(double mouseX, double mouseY, int button, CallbackInfoReturnable<Boolean> cir) {
+    private void onKeyPressed(double mouseX, double mouseY, CallbackInfo ci) {
         if (TieFix.getConfig().mc147766_fix) {
             this.selecting = Screen.hasShiftDown();
         }
