@@ -3,7 +3,6 @@ package ca.jtai.tiefix;
 import ca.jtai.tiefix.config.Config;
 import ca.jtai.tiefix.config.ConfigHelper;
 import ca.jtai.tiefix.fixes.mc89242.Sizemap;
-import com.google.gson.Gson;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -12,8 +11,7 @@ import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
 import net.minecraft.resource.ResourceManager;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.util.Identifier;
-
-import java.io.InputStreamReader;
+import org.apache.commons.io.IOUtils;
 
 @Environment(EnvType.CLIENT)
 public class TieFix implements ClientModInitializer {
@@ -29,10 +27,9 @@ public class TieFix implements ClientModInitializer {
 
                 @Override
                 public void reload(ResourceManager manager) {
-                    var id = new Identifier("tiefix", "sizemap.json");
-                    try (var reader = new InputStreamReader(manager.getResource(id).get().getInputStream())) {
-                        var gson = new Gson();
-                        sizemap = gson.fromJson(reader, Sizemap.class);
+                    var id = new Identifier("tiefix", "sizemap.bin");
+                    try (var stream = manager.getResource(id).get().getInputStream()) {
+                        sizemap = new Sizemap(IOUtils.toByteArray(stream));
                     } catch (Exception e) {
                         e.printStackTrace();
                     }

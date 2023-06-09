@@ -1,11 +1,10 @@
 package ca.jtai.tiefix.fixes.mc89242;
 
-import com.google.gson.Gson;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.Text;
 
-import java.io.File;
-import java.io.FileWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class SizemapDumper {
     /**
@@ -43,11 +42,9 @@ public class SizemapDumper {
             sizemap.set(codepoint, (int) roundedWidth);
         }
 
-        var gson = new Gson();
-        var file = new File("sizemap.json");
-        try (var writer = new FileWriter(file)) {
-            gson.toJson(sizemap, writer);
-            player.sendMessage(Text.of("Saved sizemap to sizemap.json"));
+        try {
+            Files.write(Path.of("sizemap.bin"), sizemap.getBytes());
+            player.sendMessage(Text.of("Saved sizemap to sizemap.bin"));
         } catch (Exception e) {
             e.printStackTrace();
         }
