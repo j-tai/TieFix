@@ -14,11 +14,35 @@ import net.minecraft.text.TextVisitFactory;
  * <em>if</em> it were rendered in the default font.
  */
 public class Sizemap {
-    // Yeah, this is 1MB of memory... but we all have 1MB to spare, right?
-    private byte[] sizes = new byte[0x110000];
+    /**
+     * The size of each codepoint -- 4 bits each.
+     * <p>
+     * Each byte contains the size of two codepoints. The bottom four bits
+     * contain the size of the first codepoint, and the top four bits contain
+     * the size of the second codepoint.
+     */
+    private final byte[] sizes;
+
+    public Sizemap() {
+        // Yeah, this is 500KB of memory... but we all have 500KB to spare, right?
+        sizes = new byte[ARRAY_SIZE];
+    }
+
+    /**
+     * Construct a new Sizemap from the array returned from {@link #getBytes}.
+     */
+    public Sizemap(byte[] sizes) {
+        if (sizes.length != ARRAY_SIZE) {
+            throw new IllegalArgumentException(
+                "Incorrect size: expected " + ARRAY_SIZE + ", got " + sizes.length
+            );
+        }
+        this.sizes = sizes;
+    }
 
     public int getWidth(int codepoint) {
-        return sizes[codepoint];
+        var shift = (codepoint & 1) * 4;
+        return (sizes[codepoint >> 1] >> shift) & 0xF;
     }
 
     public int getWidth(String text) {
@@ -31,7 +55,21 @@ public class Sizemap {
     }
 
     public void set(int codepoint, int size) {
-        assert size >= 0 && size <= Byte.MAX_VALUE;
-        sizes[codepoint] = (byte) size;
+        if (size < 0 || size > 0xF) {
+            throw new IllegalArgumentException("Size out of range: " + size);
+        }
+        var shift = (codepoint & 1) * 4;
+        sizes[codepoint >> 1] &= ~(byte) (0xF << shift);
+        sizes[codepoint >> 1] |= (byte) (size << shift);
     }
+
+    /**
+     * Get the raw bytes stored by this sizemap. The format of the bytes is
+     * subject to change. Do not modify this array.
+     */
+    public byte[] getBytes() {
+        return sizes;
+    }
+
+    private static final int ARRAY_SIZE = 0x110000 / 2;
 }
