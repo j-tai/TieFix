@@ -1,6 +1,6 @@
 # Changelog
 
-## master
+## v1.14.0 (2023-06-08)
 
 * Update to Minecraft 1.20
 

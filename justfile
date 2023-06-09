@@ -1,5 +1,6 @@
 gradle := "./gradlew"
 open := "xdg-open"
+today := `date +%Y-%m-%d`
 
 # Display this help message
 help:
@@ -23,3 +24,14 @@ publish: build
     -{{open}} 'https://modrinth.com/mod/tiefix/versions'
     {{gradle}} curseforge
     -{{open}} 'https://legacy.curseforge.com/minecraft/mc-mods/tiefix/files'
+
+# Bump the version number and commit
+bump-version version:
+    sed -i~ 's/^## master$/## v{{version}} ({{today}})/' CHANGELOG.md
+    grep '^## v{{version}} ({{today}})$' CHANGELOG.md
+    sed -i~ 's/^mod_version=.*$/mod_version={{version}}/' gradle.properties
+    grep '^mod_version={{version}}$' gradle.properties
+    @just build
+    git add .
+    git commit -m 'Bump version to {{version}}'
+    git tag -s -m 'v{{version}}' 'v{{version}}'
