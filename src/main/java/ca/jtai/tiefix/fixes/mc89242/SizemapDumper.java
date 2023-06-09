@@ -18,28 +18,36 @@ public class SizemapDumper {
         if (player == null) {
             return;
         }
-        player.sendMessage(Text.of("TieFix: Dumping the sizemap..."), false);
+        player.sendMessage(Text.of("TieFix: ENSURE RESOURCE PACKS ARE DISABLED!"));
+        player.sendMessage(Text.of("TieFix: Dumping the sizemap..."));
 
         var sizemap = new Sizemap();
 
         var renderer = client.textRenderer;
-        for (var codepoint = 0; codepoint <= 0xFFFF; codepoint++) {
-            var ch = (char) codepoint;
-            var width = renderer.getWidth(String.valueOf(ch));
+        for (var codepoint = 0; codepoint <= 0x10FFFF; ++codepoint) {
+            var text = new String(Character.toChars(codepoint));
+            var width = renderer.getTextHandler().getWidth(text);
             // Sanity checks
-            if (width <= 0) {
+            if (width < 0.5) {
                 player.sendMessage(Text.of(
-                    "W: U+%04X '%c' has small or negative width %d".formatted(codepoint, ch, width)
-                ), false);
+                    "W: U+%04X '%s' has small or negative width %f".formatted(codepoint, text, width)
+                ));
             }
-            sizemap.set(ch, width);
+            var roundedWidth = Math.ceil(width);
+            var offset = Math.abs(roundedWidth - width);
+            if (offset > 0.01) {
+                player.sendMessage(Text.of(
+                    "W: U+%04X '%s' has non-integer width %f".formatted(codepoint, text, width)
+                ));
+            }
+            sizemap.set(codepoint, (int) roundedWidth);
         }
 
         var gson = new Gson();
         var file = new File("sizemap.json");
         try (var writer = new FileWriter(file)) {
             gson.toJson(sizemap, writer);
-            player.sendMessage(Text.of("Saved sizemap to sizemap.json"), false);
+            player.sendMessage(Text.of("Saved sizemap to sizemap.json"));
         } catch (Exception e) {
             e.printStackTrace();
         }
